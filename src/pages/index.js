@@ -3,13 +3,11 @@ import clsx from 'clsx';
 import Link from '@docusaurus/Link';
 import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 import Layout from '@theme/Layout';
-import HomepageFeatures from '@site/src/components/HomepageFeatures';
 import CodeBlock from '@theme/CodeBlock';
 
 import styles from './index.module.css';
 
-const feature = `# Comment
-@tag
+const feature = `@tag
 Feature: Eating too many cucumbers may not be good for you
 
   Eating too much of anything may not be good for you
@@ -21,43 +19,52 @@ Feature: Eating too many cucumbers may not be good for you
 `
 
 function HomepageHeader() {
-  const {siteConfig} = useDocusaurusContext();
-  return (
-    <header className={clsx('hero hero--primary', styles.heroBanner)}>
-      <div className="container">
-        <h1 className="hero__title">{siteConfig.title}</h1>
-        <p className="hero__subtitle">{siteConfig.tagline}</p>
-        <div className={styles.buttons}>
-          <Link
-            className="button button--secondary button--lg"
-            to="/docs/intro">
-            Docusaurus Tutorial - 5min ⏱️
-          </Link>
-        </div>
-      </div>
-    </header>
-  );
+    const {siteConfig} = useDocusaurusContext();
+    return (
+        <header className={clsx('hero hero--primary', styles.heroBanner)}>
+            <div className="container">
+                <h1 className={clsx('hero__title', styles.heroTitle)}>
+                    <strong>Cucumber </strong>
+                    lets you write<br/>
+                    automated tests in plain language
+                </h1>
+            </div>
+        </header>
+    );
 }
 
 export default function Home() {
-  const {siteConfig} = useDocusaurusContext();
-  return (
-    <Layout
-      title={`Hello from ${siteConfig.title}`}
-      description="Description will go into a meta tag in <head />">
-      <HomepageHeader />
-      <main>
-        <HomepageFeatures />
-          <div>
-              <p>{siteConfig.tagline}</p>
-              <CodeBlock
-                  language="gherkin"
-                  title="features/hello.feature"
-                  showLineNumbers>
-                  {feature}
-              </CodeBlock>
-          </div>
-      </main>
-    </Layout>
-  );
+    const {siteConfig} = useDocusaurusContext();
+    return (
+        <Layout>
+            <HomepageHeader/>
+            <main>
+                <div className="container padding-vert--lg">
+                    <div className={clsx('row', styles.introRow)}>
+                        <div className="col col--6">
+                            <p>Cucumber is a tool for running automated acceptance tests, written in plain language.
+                                Because they're written in plain language, they can be read by anyone on your team.
+                                Because they can be read by anyone, they help improve communication, collaboration and
+                                trust on your team.</p>
+                            <div className={styles.introCtas}>
+                                <Link
+                                    className="button button--primary button--lg"
+                                    to="https://cucumber.io/docs/installation">
+                                    Get Started
+                                </Link>
+                            </div>
+                        </div>
+                        <div className="col col--6">
+                            <CodeBlock
+                                className={styles.introFeature}
+                                language="gherkin"
+                                showLineNumbers>
+                                {feature}
+                            </CodeBlock>
+                        </div>
+                    </div>
+                </div>
+            </main>
+        </Layout>
+    );
 }

@@ -7,8 +7,9 @@ const darkCodeTheme = require('prism-react-renderer/themes/dracula');
 /** @type {import('@docusaurus/types').Config} */
 const config = {
   title: 'Cucumber',
-  tagline: 'Cucumber is a tool for running automated acceptance tests, written in plain language. Because they\'re written in plain language, they can be read by anyone on your team. Because they can be read by anyone, they help improve communication, collaboration and trust on your team. 💖',
+  tagline: 'lets you write automated tests in plain language',
   favicon: 'img/logo.svg',
+  stylesheets: ['//fonts.googleapis.com/css2?family=Inconsolata&family=Lato:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&display=swap'],
 
   // Set the production url of your site here
   url: 'https://cucumber.community',
@@ -37,17 +38,13 @@ const config = {
           // Please change this to your repo.
           // Remove this to remove the "edit this page" links.
           editUrl:
-            'https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/',
+            'https://github.com/vegetable-specification-society/website/blob/main',
         },
         blog: {
-          showReadingTime: true,
-          // Please change this to your repo.
-          // Remove this to remove the "edit this page" links.
-          editUrl:
-            'https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/',
+          showReadingTime: false
         },
         theme: {
-          customCss: require.resolve('./src/css/custom.css'),
+          customCss: require.resolve('./src/css/custom.scss'),
         },
       }),
     ],
@@ -65,14 +62,7 @@ const config = {
           src: 'img/logo.svg',
         },
         items: [
-          // {
-          //   type: 'docSidebar',
-          //   sidebarId: 'tutorialSidebar',
-          //   position: 'left',
-          //   label: 'Tutorial',
-          // },
-          {to: 'https://cucumber.io/docs/cucumber/', label: 'Documentation', position: 'left'},
-          {to: '/blog', label: 'Blog', position: 'left'},
+          {to: 'https://cucumber.io/docs/installation', label: 'Documentation', position: 'left'},
           {
             href: 'https://github.com/cucumber',
             label: 'GitHub',
@@ -84,11 +74,27 @@ const config = {
         style: 'dark',
         links: [
           {
-            title: 'Docs',
+            title: 'Flavours',
             items: [
               {
-                label: 'Tutorial',
-                to: '/docs/intro',
+                className: 'footer__link-item flavour flavour--ruby',
+                label: 'cucumber-ruby',
+                href: 'https://github.com/cucumber/cucumber-ruby',
+              },
+              {
+                className: 'footer__link-item flavour flavour--jvm',
+                label: 'cucumber-jvm',
+                href: 'https://github.com/cucumber/cucumber-jvm',
+              },
+              {
+                className: 'footer__link-item flavour flavour--js',
+                label: 'cucumber-js',
+                href: 'https://github.com/cucumber/cucumber-js',
+              },
+              {
+                className: 'footer__link-item flavour flavour--go',
+                label: 'godog',
+                href: 'https://github.com/cucumber/godog',
               },
             ],
           },
@@ -96,16 +102,16 @@ const config = {
             title: 'Community',
             items: [
               {
-                label: 'Stack Overflow',
-                href: 'https://stackoverflow.com/questions/tagged/cucumber',
-              },
-              {
                 label: 'Slack',
                 href: 'https://communityinviter.com/apps/cucumberbdd/docs-page',
               },
               {
                 label: 'Twitter',
                 href: 'https://twitter.com/cucumberbdd',
+              },
+              {
+                label: 'Stack Overflow',
+                href: 'https://stackoverflow.com/questions/tagged/cucumber',
               },
             ],
           },
@@ -131,6 +137,10 @@ const config = {
         additionalLanguages: ['gherkin']
       },
     }),
+
+    plugins: [
+      'docusaurus-plugin-sass'
+    ]
 };
 
 module.exports = config;

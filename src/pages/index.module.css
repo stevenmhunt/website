@@ -8,6 +8,7 @@
   text-align: center;
   position: relative;
   overflow: hidden;
+  background-image: linear-gradient(-45deg, var(--ifm-color-primary), var(--ifm-color-primary-light));
 }
 
 @media screen and (max-width: 996px) {
@@ -16,8 +17,19 @@
   }
 }
 
-.buttons {
+.heroTitle {
+  font-weight: 300;
+}
+
+.introRow {
+  align-items: center;
+}
+
+.introCtas {
   display: flex;
   align-items: center;
-  justify-content: center;
+}
+
+.introFeature {
+  margin-bottom: 0;
 }

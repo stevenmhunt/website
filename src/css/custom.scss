@@ -1,0 +1,55 @@
+/**
+ * Any CSS included here will be global. The classic template
+ * bundles Infima by default. Infima is a CSS framework designed to
+ * work well for content-centric websites.
+ */
+
+/* You can override the default Infima variables here. */
+:root {
+  --ifm-color-primary: #00A818;
+  --ifm-color-primary-dark: #00A818;
+  --ifm-color-primary-darker: #00A818;
+  --ifm-color-primary-darkest: #00A818;
+  --ifm-color-primary-light: #39B54A;
+  --ifm-color-primary-lighter: #39B54A;
+  --ifm-color-primary-lightest: #39B54A;
+  --ifm-code-font-size: 100%;
+  --ifm-font-family-base: 'Lato', sans-serif;
+  --ifm-font-family-monospace: 'Inconsolata', monospace;
+  --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.1);
+}
+
+/* For readability concerns, you should choose a lighter palette in dark mode. */
+[data-theme='dark'] {
+  --ifm-color-primary: #39B54A;
+  --ifm-color-primary-dark: #39B54A;
+  --ifm-color-primary-darker: #39B54A;
+  --ifm-color-primary-darkest: #39B54A;
+  --ifm-color-primary-light: #CEF257;
+  --ifm-color-primary-lighter: #CEF257;
+  --ifm-color-primary-lightest: #CEF257;
+  --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.3);
+}
+
+.flavour {
+  padding-left: 24px;
+  background-position: 0 50%;
+  background-repeat: no-repeat;
+  background-size: 18px;
+}
+
+.flavour--ruby {
+  background-image: url('/img/flavour-ruby.svg')
+}
+
+.flavour--jvm {
+  background-image: url('/img/flavour-jvm.svg')
+}
+
+.flavour--js {
+  background-image: url('/img/flavour-js.svg')
+}
+
+.flavour--go {
+  background-image: url('/img/flavour-go.svg')
+}
