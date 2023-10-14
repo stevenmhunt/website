@@ -53,8 +53,8 @@ const config = {
   themeConfig:
     /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
     ({
-      // Replace with your project's social card
-      image: 'img/docusaurus-social-card.jpg',
+      // social card image
+      image: 'img/logo.svg',
       navbar: {
         title: 'Cucumber',
         logo: {
@@ -62,7 +62,11 @@ const config = {
           src: 'img/logo.svg',
         },
         items: [
-          {to: 'https://cucumber.io/docs/installation', label: 'Documentation', position: 'left'},
+          {
+            to: 'https://cucumber.io/docs/installation',
+            label: 'Documentation',
+            position: 'left'
+          },
           {
             href: 'https://github.com/cucumber',
             label: 'GitHub',
@@ -79,22 +83,22 @@ const config = {
               {
                 className: 'footer__link-item flavour flavour--ruby',
                 label: 'cucumber-ruby',
-                href: 'https://github.com/cucumber/cucumber-ruby',
+                to: 'https://github.com/cucumber/cucumber-ruby',
               },
               {
                 className: 'footer__link-item flavour flavour--jvm',
                 label: 'cucumber-jvm',
-                href: 'https://github.com/cucumber/cucumber-jvm',
+                to: 'https://github.com/cucumber/cucumber-jvm',
               },
               {
                 className: 'footer__link-item flavour flavour--js',
                 label: 'cucumber-js',
-                href: 'https://github.com/cucumber/cucumber-js',
+                to: 'https://github.com/cucumber/cucumber-js',
               },
               {
                 className: 'footer__link-item flavour flavour--go',
                 label: 'godog',
-                href: 'https://github.com/cucumber/godog',
+                to: 'https://github.com/cucumber/godog',
               },
             ],
           },
