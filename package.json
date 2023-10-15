@@ -25,7 +25,8 @@
     "sass": "^1.69.3"
   },
   "devDependencies": {
-    "@docusaurus/module-type-aliases": "2.4.3"
+    "@docusaurus/module-type-aliases": "2.4.3",
+    "@tsconfig/docusaurus": "^2.0.2"
   },
   "browserslist": {
     "production": [

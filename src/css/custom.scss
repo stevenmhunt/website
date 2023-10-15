@@ -13,6 +13,7 @@
   --ifm-color-primary-light: #39B54A;
   --ifm-color-primary-lighter: #39B54A;
   --ifm-color-primary-lightest: #39B54A;
+  --ifm-footer-background-color: #f6f8fa;
   --ifm-code-font-size: 100%;
   --ifm-font-family-base: 'Lato', sans-serif;
   --ifm-font-family-monospace: 'Inconsolata', monospace;
@@ -21,14 +22,13 @@
 
 /* For readability concerns, you should choose a lighter palette in dark mode. */
 [data-theme='dark'] {
-  --ifm-color-primary: #39B54A;
-  --ifm-color-primary-dark: #39B54A;
-  --ifm-color-primary-darker: #39B54A;
-  --ifm-color-primary-darkest: #39B54A;
-  --ifm-color-primary-light: #CEF257;
-  --ifm-color-primary-lighter: #CEF257;
-  --ifm-color-primary-lightest: #CEF257;
+  --ifm-footer-background-color: #282A36;
   --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.3);
+}
+
+.footer__copyright {
+  font-size: 0.75rem;
+  line-height: 1em;
 }
 
 .flavour {

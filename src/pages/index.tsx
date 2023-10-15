@@ -5,7 +5,7 @@ import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 import Layout from '@theme/Layout';
 import CodeBlock from '@theme/CodeBlock';
 
-import styles from './index.module.css';
+import styles from './index.module.scss';
 
 const feature = `@tag
 Feature: Eating too many cucumbers may not be good for you
@@ -19,11 +19,10 @@ Feature: Eating too many cucumbers may not be good for you
 `
 
 function HomepageHeader() {
-    const {siteConfig} = useDocusaurusContext();
     return (
-        <header className={clsx('hero hero--primary', styles.heroBanner)}>
+        <header className={clsx(styles.heroBanner)}>
             <div className="container">
-                <h1 className={clsx('hero__title', styles.heroTitle)}>
+                <h1 className={clsx(styles.heroTitle)}>
                     <strong>Cucumber </strong>
                     lets you write<br/>
                     automated tests in plain language
