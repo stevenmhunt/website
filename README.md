@@ -1,6 +1,6 @@
 # Website
 
-The (as yet unpublished) new website for Cucumber. Available for preview at <https://resplendent-hamster-2868c5.netlify.app/>
+The (as yet unpublished) new website for Cucumber. Available for preview at <https://cucumber-site-new.netlify.app/>
 
 ### Installation
 
