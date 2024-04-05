@@ -64,7 +64,7 @@ export default {
         },
         items: [
           {
-            to: 'https://cucumber.io/docs/installation',
+            to: '/docs',
             label: 'Documentation',
             position: 'left'
           },
@@ -143,7 +143,7 @@ export default {
       prism: {
         theme: lightCodeTheme,
         darkTheme: darkCodeTheme,
-        additionalLanguages: ['gherkin']
+        additionalLanguages: ['gherkin', 'java', 'ruby', 'scala']
       },
     }),
 

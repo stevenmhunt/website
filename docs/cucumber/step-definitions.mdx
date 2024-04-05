@@ -1,0 +1,160 @@
+# Step definitions
+
+A Step Definition is a <Term>stepdef-body</Term> with an [expression](#expressions) that links it to one or more [Gherkin steps](/docs/gherkin/reference#steps).
+When Cucumber executes a [Gherkin step](/docs/gherkin/reference#steps) in a scenario, it will look for a matching *step definition* to execute.
+
+To illustrate how this works, look at the following Gherkin Scenario:
+
+```gherkin
+Scenario: Some cukes
+  Given I have 48 cukes in my belly
+```
+
+The `I have 48 cukes in my belly` part of the step (the text following the `Given` keyword) will match the following step definition:
+
+<Tabs>
+    <Tab value="java">
+
+```java
+package com.example;
+import io.cucumber.java.en.Given;
+
+public class StepDefinitions {
+    @Given("I have {int} cukes in my belly")
+    public void i_have_n_cukes_in_my_belly(int cukes) {
+        System.out.format("Cukes: %n\n", cukes);
+    }
+}
+```
+
+Or, using Java8 lambdas:
+
+```java
+package com.example;
+import io.cucumber.java8.En;
+
+public class StepDefinitions implements En {
+    public StepDefinitions() {
+        Given("I have {int} cukes in my belly", (Integer cukes) -> {
+            System.out.format("Cukes: %n\n", cukes);
+        });
+    }
+}
+```
+
+    </Tab>
+    <Tab value="kotlin">
+
+```kotlin
+package com.example
+import io.cucumber.java8.En
+
+class StepDefinitions : En {
+
+    init {
+        Given("I have {int} cukes in my belly") { cukes: Int ->
+                println("Cukes: $cukes")
+        }
+    }
+
+}
+```
+
+    </Tab>
+    <Tab value="scala">
+
+```scala
+package com.example
+import io.cucumber.scala.{ScalaDsl, EN}
+
+class StepDefinitions extends ScalaDsl with EN {
+
+    Given("I have {int} cukes in my belly") { cukes: Int =>
+        println(s"Cukes: $cukes")
+    }
+
+}
+```
+
+    </Tab>
+    <Tab value="ruby">
+
+```ruby
+Given('I have {int} cukes in my belly') do |cukes|
+  puts "Cukes: #{cukes}"
+end
+```
+
+    </Tab>
+    <Tab value="javascript">
+
+```javascript
+const { Given } = require('cucumber')
+
+Given('I have {int} cukes in my belly', function (cukes) {
+  console.log(`Cukes: ${cukes}`)
+});
+```
+
+    </Tab>
+</Tabs>
+
+## Expressions
+
+A step definition's *expression* can either be a [Regular Expression](https://en.wikipedia.org/wiki/Regular_expression)
+or a [Cucumber Expression](/docs/cucumber/cucumber-expressions). The examples in this section use Cucumber Expressions.
+If you prefer to use Regular Expressions, each <Term>expression-parameter</Term> from the match will be passed as arguments to the step
+definition's <Term>stepdef-body</Term>.
+
+<Tabs>
+    <Tab value="java">
+
+```java
+@Given("I have {int} cukes in my belly")
+public void i_have_n_cukes_in_my_belly(int cukes) {
+}
+```
+
+    </Tab>
+    <Tab value="kotlin">
+
+```kotlin
+Given("I have {int} cukes in my belly") { cukes: Int ->
+        println("Cukes: $cukes")
+}
+```
+
+    </Tab>
+    <Tab value="scala">
+
+```scala
+Given("I have {int} cukes in my belly") { cukes: Int =>
+    println(s"Cukes: $cukes")
+}
+```
+
+    </Tab>
+    <Tab value="ruby">
+
+```ruby
+Given(/I have {int} cukes in my belly/) do |cukes|
+end
+```
+
+    </Tab>
+    <Tab value="javascript">
+
+```javascript
+Given(/I have {int} cukes in my belly/, function (cukes) {
+});
+```
+
+    </Tab>
+</Tabs>
+
+If the <Term>expression-parameter</Term> expression is identical to one of the registered
+[parameter types](/docs/cucumber/cucumber-expressions#parameter-types)'s `regexp`,
+the captured string will be transformed before it is passed to the
+step definition's <Term>stepdef-body</Term>. In the example above, the `cukes`
+argument will be an integer, because the built-in `int` parameter type's
+`regexp` is `\d+` .
