@@ -2,11 +2,18 @@ import React, {FC} from "react";
 import CodeBlock from "@theme/CodeBlock";
 import {useContentByKeystroke} from "./useContentByKeystroke";
 
-export const KeystrokeCodeBlock: FC<{content: string}> = ({content}) => {
+interface Props {
+    content: string
+    language?: string
+    title?: string
+}
+
+export const KeystrokeCodeBlock: FC<Props> = ({content, language, title}) => {
     const partialContent = useContentByKeystroke(content)
     return <CodeBlock
-        language="gherkin"
-        showLineNumbers>
+        key={content}
+        language={language}
+        title={title}>
         {partialContent}
     </CodeBlock>
 }
