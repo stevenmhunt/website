@@ -1,8 +1,8 @@
 import React, {FC} from 'react';
 import clsx from "clsx";
-import CodeBlock from "@theme/CodeBlock";
 import {feature} from "./feature";
 import styles from './Intro.module.scss'
+import {KeystrokeCodeBlock} from "../KeystrokeCodeBlock";
 
 export const Intro: FC = () => {
     return <div className={clsx('row', styles.introRow)}>
@@ -14,11 +14,7 @@ export const Intro: FC = () => {
                 your team.</p>
         </div>
         <div className="col col--6">
-            <CodeBlock
-                language="gherkin"
-                showLineNumbers>
-                {feature}
-            </CodeBlock>
+            <KeystrokeCodeBlock content={feature}/>
         </div>
     </div>
 }
