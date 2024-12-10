@@ -65,6 +65,10 @@ export default {
   themeConfig:
     /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
     ({
+      colorMode: {
+        disableSwitch: true,
+        respectPrefersColorScheme: true,
+      },
       // social card image
       image: 'img/logo.svg',
       navbar: {
@@ -85,70 +89,15 @@ export default {
             position: 'left'
           },
           {
+            'aria-label': 'GitHub',
             href: 'https://github.com/cucumber',
-            label: 'GitHub',
             position: 'right',
+            className: 'header-github-link'
           },
         ],
       },
       footer: {
-        links: [
-          {
-            title: 'Flavours',
-            items: [
-              {
-                className: 'footer__link-item flavour flavour--ruby',
-                label: 'cucumber-ruby',
-                to: 'https://github.com/cucumber/cucumber-ruby',
-              },
-              {
-                className: 'footer__link-item flavour flavour--jvm',
-                label: 'cucumber-jvm',
-                to: 'https://github.com/cucumber/cucumber-jvm',
-              },
-              {
-                className: 'footer__link-item flavour flavour--js',
-                label: 'cucumber-js',
-                to: 'https://github.com/cucumber/cucumber-js',
-              },
-              {
-                className: 'footer__link-item flavour flavour--go',
-                label: 'godog',
-                to: 'https://github.com/cucumber/godog',
-              },
-            ],
-          },
-          {
-            title: 'Community',
-            items: [
-              {
-                label: 'Slack',
-                href: 'https://communityinviter.com/apps/cucumberbdd/docs-page',
-              },
-              {
-                label: 'Twitter',
-                href: 'https://twitter.com/cucumberbdd',
-              },
-              {
-                label: 'Stack Overflow',
-                href: 'https://stackoverflow.com/questions/tagged/cucumber',
-              },
-            ],
-          },
-          {
-            title: 'More',
-            items: [
-              {
-                label: 'GitHub',
-                href: 'https://github.com/cucumber',
-              },
-              {
-                label: 'OpenCollective',
-                href: 'https://opencollective.com/cucumber',
-              },
-            ],
-          },
-        ],
+        links: [],
         logo: {
           alt: 'Deploys by Netlify',
           src: 'https://www.netlify.com/v3/img/components/netlify-color-accent.svg',
