@@ -1,8 +1,11 @@
 import {Config} from '@docusaurus/types';
 import {themes} from 'prism-react-renderer';
+import {globbySync} from "globby";
 
 const lightCodeTheme = themes.dracula;
 const darkCodeTheme = themes.github;
+
+const platformsCount = globbySync('docs/installation/*.md').length
 
 export default {
   title: 'Cucumber',
@@ -118,5 +121,8 @@ export default {
     }),
     plugins: [
       'docusaurus-plugin-sass'
-    ]
+    ],
+  customFields: {
+      platformsCount
+  }
 } satisfies Config;
