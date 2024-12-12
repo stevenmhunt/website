@@ -45,6 +45,13 @@ export const Intro: FC = () => {
             <div className="col col--3">
                 <strong>Step 2</strong>
                 <h3 className="text--light">Run your tests</h3>
+                <p>
+                    <Link
+                        className="button button--secondary"
+                        to="/docs/cucumber/api#running-cucumber">
+                        Learn More
+                    </Link>
+                </p>
             </div>
             <div className="col col--6">
                 <RunSimulator scenarios={1} steps={3}/>
