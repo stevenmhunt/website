@@ -5,17 +5,21 @@ import { demoDuration } from "./constants";
 interface Props {
     scenarios: number
     steps: number
+    enabled: boolean
 }
 
-export const RunSimulator: FC<Props> = ({scenarios, steps}) => {
+export const RunSimulator: FC<Props> = ({scenarios, steps, enabled}) => {
     const [completed, setCompleted] = useState(0)
     useEffect(() => {
+        if (!enabled) {
+            return;
+        }
         if (completed < steps) {
             setTimeout(() => {
                 setCompleted(completed + 1)
             }, Math.floor(demoDuration / steps))
         }
-    }, [steps, completed])
+    }, [enabled, steps, completed])
     return <CodeBlock>
         {Array(completed).fill('.').map((thing, index) => {
             return <strong key={index} className="text--primary">{thing}</strong>
