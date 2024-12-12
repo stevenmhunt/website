@@ -1,4 +1,5 @@
 import {useEffect, useState} from "react";
+import {demoDuration} from "./constants";
 
 export function useContentByKeystroke(content: string) {
     const trimmed = content.trim()
@@ -7,7 +8,7 @@ export function useContentByKeystroke(content: string) {
         if (partial.length < trimmed.length) {
             setTimeout(() => {
                 setPartial(trimmed.substring(0, partial.length + 1))
-            }, 5)
+            }, Math.floor(demoDuration / trimmed.length))
         }
     }, [trimmed, partial]);
     let normalised = partial

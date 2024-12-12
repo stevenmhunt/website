@@ -21,3 +21,5 @@ When('the greeter says hello',
 Then('I should have heard {string}',
     expected => assert.equal(world.whatIHeard, expected))
 `
+
+export const demoDuration = 1_000

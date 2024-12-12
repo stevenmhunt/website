@@ -1,11 +1,10 @@
 import React, {FC} from 'react';
 import clsx from "clsx";
-import {feature, steps} from "./code";
+import {feature, steps} from "./constants";
 import styles from './Intro.module.scss'
-import {KeystrokeCodeBlock} from "../KeystrokeCodeBlock";
-import {RunSimulator} from "../RunSimulator";
+import {KeystrokeCodeBlock} from "./KeystrokeCodeBlock";
+import {RunSimulator} from "./RunSimulator";
 import Link from "@docusaurus/Link";
-
 
 export const Intro: FC = () => {
     return <div>
