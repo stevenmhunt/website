@@ -1,54 +1,28 @@
-import { FC, useEffect, useState } from 'react'
+import { FC } from 'react'
 import CodeBlock from '@theme/CodeBlock'
-import { demoDuration } from './constants'
 
 interface Props {
   scenarios: number
   steps: number
-  enabled: boolean
 }
 
-export const RunSimulator: FC<Props> = ({ scenarios, steps, enabled }) => {
-  const [completed, setCompleted] = useState(0)
-  useEffect(() => {
-    if (!enabled) {
-      return
-    }
-    if (completed < steps) {
-      setTimeout(
-        () => {
-          setCompleted(completed + 1)
-        },
-        Math.floor(demoDuration / steps)
-      )
-    }
-  }, [enabled, steps, completed])
+export const RunSimulator: FC<Props> = ({ scenarios, steps }) => {
   return (
     <CodeBlock>
-      {Array(completed)
+      {Array(steps)
         .fill('.')
         .map((thing, index) => {
           return (
-            <strong key={index} className="text--primary">
+            <strong key={index} className="text--success">
               {thing}
             </strong>
           )
         })}
       <br />
       <br />
-      {steps === completed ? (
-        <>
-          {scenarios} scenarios (<span className="text--primary">{scenarios} passed</span>)<br />
-          {steps} steps (<span className="text--primary">{steps} passed</span>)<br />
-          0m01.000s
-        </>
-      ) : (
-        <>
-          <br />
-          <br />
-          <br />
-        </>
-      )}
+      {scenarios} scenarios (<span className="text--success">{scenarios} passed</span>)<br />
+      {steps} steps (<span className="text--success">{steps} passed</span>)<br />
+      0m01.000s
     </CodeBlock>
   )
 }

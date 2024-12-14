@@ -1,14 +1,11 @@
-export const feature = `
-Feature: Greeting
+export const feature = `Feature: Greeting
 
   Scenario: Say hello
     Given a greeter is present
     When the greeter says hello
-    Then I should have heard "hello"
-`
+    Then I should have heard "hello"`
 
-export const steps = `
-import { Given, When, Then, world } from '@cucumber/cucumber'
+export const steps = `import { Given, When, Then, world } from '@cucumber/cucumber'
 import assert from 'node:assert'
 import { Greeter } from '../lib/Greeter.js'
 
@@ -19,7 +16,4 @@ When('the greeter says hello',
     () => world.whatIHeard = world.greeter.sayHello())
 
 Then('I should have heard {string}',
-    expected => assert.equal(world.whatIHeard, expected))
-`
-
-export const demoDuration = 1_000
+    expected => assert.equal(world.whatIHeard, expected))`

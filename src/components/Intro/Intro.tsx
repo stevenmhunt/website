@@ -1,14 +1,12 @@
-import React, { FC, useState } from 'react'
+import React, { FC } from 'react'
 import clsx from 'clsx'
 import { feature, steps } from './constants'
 import styles from './Intro.module.scss'
-import { KeystrokeCodeBlock } from './KeystrokeCodeBlock'
 import { RunSimulator } from './RunSimulator'
 import Link from '@docusaurus/Link'
+import CodeBlock from '@theme/CodeBlock'
 
 export const Intro: FC = () => {
-  const [step2Enabled, setStep2Enabled] = useState(false)
-  const [step3Enabled, setStep3Enabled] = useState(false)
   return (
     <div>
       <div className={clsx('row margin-vert--lg', styles.introRow)}>
@@ -22,13 +20,10 @@ export const Intro: FC = () => {
           </p>
         </div>
         <div className="col col--6">
-          <KeystrokeCodeBlock
-            content={feature}
+          <CodeBlock
             language="gherkin"
             title="features/greeting.feature"
-            enabled={true}
-            onFinished={setStep2Enabled}
-          />
+          >{feature}</CodeBlock>
         </div>
       </div>
       <div className={clsx('row margin-vert--lg', styles.introRow)}>
@@ -42,13 +37,10 @@ export const Intro: FC = () => {
           </p>
         </div>
         <div className="col col--6">
-          <KeystrokeCodeBlock
-            content={steps}
+          <CodeBlock
             language="javascript"
             title="features/steps.js"
-            enabled={step2Enabled}
-            onFinished={setStep3Enabled}
-          />
+          >{steps}</CodeBlock>
         </div>
       </div>
       <div className={clsx('row margin-vert--lg', styles.introRow)}>
@@ -62,7 +54,7 @@ export const Intro: FC = () => {
           </p>
         </div>
         <div className="col col--6">
-          <RunSimulator scenarios={1} steps={3} enabled={step3Enabled} />
+          <RunSimulator scenarios={1} steps={3} />
         </div>
       </div>
     </div>
