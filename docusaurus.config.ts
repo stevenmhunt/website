@@ -1,11 +1,8 @@
 import {Config} from '@docusaurus/types';
 import {themes} from 'prism-react-renderer';
-<<<<<<< HEAD
 import {globbySync} from "globby";
-=======
 import YAML from 'yaml';
 import {readFileSync} from 'node:fs';
->>>>>>> main
 
 const lightCodeTheme = themes.jettwaveLight;
 const darkCodeTheme = themes.jettwaveDark;
@@ -119,10 +116,7 @@ export default {
       'docusaurus-plugin-sass'
     ],
   customFields: {
-<<<<<<< HEAD
-      platformsCount
-=======
+    platformsCount,
     versions: YAML.parse(readFileSync('./versions.yaml', {encoding: 'utf-8'}))
->>>>>>> main
   }
 } satisfies Config;
