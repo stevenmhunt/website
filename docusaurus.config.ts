@@ -3,8 +3,8 @@ import {themes} from 'prism-react-renderer';
 import YAML from 'yaml';
 import {readFileSync} from 'node:fs';
 
-const lightCodeTheme = themes.dracula;
-const darkCodeTheme = themes.github;
+const lightCodeTheme = themes.jettwaveLight;
+const darkCodeTheme = themes.jettwaveDark;
 
 export default {
   title: 'Cucumber',
@@ -12,18 +12,12 @@ export default {
   favicon: 'img/logo.svg',
   stylesheets: ['//fonts.googleapis.com/css2?family=Inconsolata&family=Lato:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&display=swap'],
 
-  // Set the production url of your site here
   url: 'https://cucumber.community',
-  // Set the /<baseUrl>/ pathname under which your site is served
-  // For GitHub pages deployment, it is often '/<projectName>/'
   baseUrl: '/',
 
   onBrokenLinks: 'warn', // TODO change to throw once we start migrating docs
   onBrokenMarkdownLinks: 'warn',
 
-  // Even if you don't use internalization, you can use this field to set useful
-  // metadata like html lang. For example, if your site is Chinese, you may want
-  // to replace "en" with "zh-Hans".
   i18n: {
     defaultLocale: 'en',
     locales: ['en'],
@@ -36,8 +30,6 @@ export default {
       ({
         docs: {
           sidebarPath: require.resolve('./sidebars.js'),
-          // Please change this to your repo.
-          // Remove this to remove the "edit this page" links.
           editUrl:
             'https://github.com/cucumber/website/blob/main',
           showLastUpdateAuthor: false,
@@ -71,7 +63,6 @@ export default {
         disableSwitch: true,
         respectPrefersColorScheme: true,
       },
-      // social card image
       image: 'img/logo.svg',
       navbar: {
         title: 'Cucumber',
@@ -115,7 +106,7 @@ export default {
       prism: {
         theme: lightCodeTheme,
         darkTheme: darkCodeTheme,
-        additionalLanguages: ['gherkin', 'java', 'ruby', 'scala']
+        additionalLanguages: ['gherkin', 'go', 'groovy', 'java', 'ruby', 'scala']
       },
     }),
     plugins: [
