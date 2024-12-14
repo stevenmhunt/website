@@ -116,6 +116,7 @@ export default {
     },
   plugins: ['docusaurus-plugin-sass'],
   customFields: {
+    platformsCount,
     versions: YAML.parse(readFileSync('./versions.yaml', { encoding: 'utf-8' })),
   },
 } satisfies Config
