@@ -40,7 +40,7 @@ export const RunSimulator: FC<Props> = ({ scenarios, steps, enabled }) => {
         <>
           {scenarios} scenarios (<span className="text--primary">{scenarios} passed</span>)<br />
           {steps} steps (<span className="text--primary">{steps} passed</span>)<br />
-          0m01.064s
+          0m01.000s
         </>
       ) : (
         <>
