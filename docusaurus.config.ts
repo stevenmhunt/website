@@ -1,5 +1,6 @@
 import { Config } from '@docusaurus/types'
 import { themes } from 'prism-react-renderer'
+import { globbySync } from 'globby'
 import YAML from 'yaml'
 import { readFileSync } from 'node:fs'
 
@@ -11,6 +12,8 @@ const darkCodeTheme = {
     backgroundColor: 'var(--ifm-navbar-background-color)',
   },
 }
+
+const platformsCount = globbySync('docs/installation/*.md').length
 
 export default {
   title: 'Cucumber',
@@ -134,6 +137,7 @@ export default {
     },
   plugins: ['docusaurus-plugin-sass'],
   customFields: {
+    platformsCount,
     versions: YAML.parse(readFileSync('./versions.yaml', { encoding: 'utf-8' })),
   },
 } satisfies Config
