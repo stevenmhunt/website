@@ -5,7 +5,13 @@ import YAML from 'yaml'
 import { readFileSync } from 'node:fs'
 
 const lightCodeTheme = themes.jettwaveLight
-const darkCodeTheme = themes.jettwaveDark
+const darkCodeTheme = {
+  ...themes.jettwaveDark,
+  plain: {
+    ...themes.jettwaveDark.plain,
+    backgroundColor: 'var(--ifm-navbar-background-color)',
+  },
+}
 
 const platformsCount = globbySync('docs/installation/*.md').length
 
@@ -14,7 +20,7 @@ export default {
   tagline: 'lets you write automated tests in plain language',
   favicon: 'img/logo.svg',
   stylesheets: [
-    '//fonts.googleapis.com/css2?family=Inconsolata&family=Lato:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&display=swap',
+    '//fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&family=Lato:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&display=swap',
   ],
 
   url: 'https://cucumber.community',
@@ -22,6 +28,9 @@ export default {
 
   onBrokenLinks: 'warn', // TODO change to throw once we start migrating docs
   onBrokenMarkdownLinks: 'warn',
+  markdown: {
+    format: 'detect',
+  },
 
   i18n: {
     defaultLocale: 'en',
@@ -43,7 +52,10 @@ export default {
           ],
         },
         blog: {
+          onInlineAuthors: 'ignore',
           showReadingTime: false,
+          blogSidebarCount: 10,
+          postsPerPage: 10,
           remarkPlugins: [
             [require('@docusaurus/remark-plugin-npm2yarn'), { sync: true, converters: ['yarn'] }],
           ],
@@ -79,6 +91,16 @@ export default {
           {
             to: '/docs',
             label: 'Documentation',
+            position: 'left',
+          },
+          {
+            to: '/community',
+            label: 'Community',
+            position: 'left',
+          },
+          {
+            to: '/blog',
+            label: 'Blog',
             position: 'left',
           },
           {
