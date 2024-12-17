@@ -20,10 +20,9 @@ export const Intro: FC = () => {
           </p>
         </div>
         <div className="col col--6">
-          <CodeBlock
-            language="gherkin"
-            title="features/greeting.feature"
-          >{feature}</CodeBlock>
+          <CodeBlock language="gherkin" title="features/greeting.feature">
+            {feature}
+          </CodeBlock>
         </div>
       </div>
       <div className={clsx('row margin-vert--lg', styles.introRow)}>
@@ -37,10 +36,9 @@ export const Intro: FC = () => {
           </p>
         </div>
         <div className="col col--6">
-          <CodeBlock
-            language="javascript"
-            title="features/steps.js"
-          >{steps}</CodeBlock>
+          <CodeBlock language="javascript" title="features/steps.js">
+            {steps}
+          </CodeBlock>
         </div>
       </div>
       <div className={clsx('row margin-vert--lg', styles.introRow)}>
