@@ -22,6 +22,9 @@ export const Hero: FC = () => {
           <Link className="button button--primary button--lg" to="/docs">
             Get Started
           </Link>
+          <Link className="button button--secondary button--lg" to="/community">
+            Join the Community
+          </Link>
         </div>
         <p className="readable-blurb">
           Cucumber is a tool for running automated acceptance tests, written in{' '}
